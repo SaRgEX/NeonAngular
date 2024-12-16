@@ -1,0 +1,13 @@
+<form action="" class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h1 class="h1">Вход</h1>
+  <label class="control-label mb16">
+    Login
+    <input formControlName="name" type="text" class="l-input" placeholder="Введите логин">
+  </label>
+  <label class="control-label mb32">
+    Password
+    <input formControlName="password" type="text" class="l-input" placeholder="Введите пароль">
+  </label>
+
+  <button class="btn" type="submit">Войти</button>
+</form>

@@ -1,0 +1,7 @@
+@if (product$ | async; as product) {
+  <div class="product__wrapper">
+    <app-product-details
+      [product]="product">
+    </app-product-details>
+  </div>
+}

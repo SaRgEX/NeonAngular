@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  width: 100%;
+  background-color: var(--footer-bg-color);
+  padding: 10px;
+}
+
+.page-footer {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-content: center;
+  position: relative;
+  margin: 1rem;
+}
+
+.powered-by {
+  letter-spacing: 14px;
+  font-size: 78px;
+}

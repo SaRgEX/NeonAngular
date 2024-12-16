@@ -1,0 +1,29 @@
+@if (product) {
+  <a
+    class="product-container"
+    [routerLink]="'product/'+product.id"
+  >
+    <div class="product">
+      <div class="container__img">
+        <img
+          [src]="product.imagePath"
+          [alt]="product.name"
+          class="container__img"
+
+          (error)="onError()"
+        />
+      </div>
+      <div class="details-container">
+        <div class="details">
+          <p class="details-count">Количество: {{product.count}}</p>
+          <p class="details-price">Цена: {{product.cost}}₽</p>
+        </div>
+        <div class="product-name">
+          <p>{{product.name}}</p>
+        </div>
+      </div>
+    </div>
+  </a>
+} @else {
+  Not Found
+}

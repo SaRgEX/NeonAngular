@@ -1,0 +1,28 @@
+@if (product) {
+  <div class="product-details__container">
+    <div class="product-details__img">
+      <img
+        [src]="product.imagePath"
+        [alt]="product.name"
+        class="product-details__img"
+        (error)="onError()"
+      />
+    </div>
+    <div class="product-details__info">
+      <h2>{{product.name}}</h2>
+      <p>Категория: {{product.category}}</p>
+      <p>Производитель: {{product.manufacturer}}</p>
+      <p>{{product.description}}</p>
+      <div class="info__wrapper">
+        <p>Цена: {{product.cost}}₽</p>
+        <p>Количество: {{product.count}}</p>
+      </div>
+      <div class="product-details__buttons">
+        <button>Добавить в корзину</button>
+        <button>Купить</button>
+      </div>
+    </div>
+  </div>
+} @else {
+  asdf
+}

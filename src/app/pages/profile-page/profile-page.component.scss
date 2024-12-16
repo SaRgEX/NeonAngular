@@ -1,0 +1,41 @@
+:host {
+}
+
+.profile__wrapper {
+  max-width: 1440px;
+  margin: 12px auto 100px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.profile_menu {
+  background: var(--light-color);
+  color: var(--dark-color);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.h3 {
+  text-align: center;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-menu__buttons {
+  background: var(--light-color);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.profile-menu__buttons:hover {
+  background: var(--background-color);
+  opacity: 0.9;
+  transition: 0.2s;
+}

@@ -5,7 +5,16 @@
   "projects": {
     "Neon": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": true
+        },
+        "@schematics/angular:pipe": {
+          "standalone": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -92,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "4098bfd7-ef14-47c3-b058-a2d28d22f607"
   }
 }

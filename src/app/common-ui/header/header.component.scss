@@ -1,0 +1,38 @@
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.logo {
+  width: 65px;
+  overflow-wrap: break-word;
+  background-image: linear-gradient(#769DFF, #753678);
+  color: transparent;
+  background-clip: text;
+  line-height: 40px;
+  font-size: 40px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-family: 'Inconsolata', Tofu, serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--light-color);
+  box-shadow: #000000 0 -15px 15px 0;
+  margin: 0;
+  color: #000000;
+}
+
+.menu {
+  cursor: pointer;
+}
+
+.menu:hover {
+  opacity: 0.9;
+  transform: scale(0.95);
+}
