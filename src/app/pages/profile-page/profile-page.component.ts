@@ -9,6 +9,8 @@ import {OrderLayoutComponent} from '../../common-ui/order-layout/order-layout.co
 import {CartLayoutComponent} from '../../common-ui/cart-layout/cart-layout.component';
 import {CartService} from '../../data/services/cart.service';
 import {tap} from 'rxjs';
+import {CookieService} from 'ngx-cookie-service';
+import {RouterLink} from '@angular/router';
 
 
 @Component({
@@ -18,7 +20,8 @@ import {tap} from 'rxjs';
     NgSwitchDefault,
     NgSwitchCase,
     OrderLayoutComponent,
-    CartLayoutComponent
+    CartLayoutComponent,
+    RouterLink
   ],
   templateUrl: './profile-page.component.html',
   standalone: true,
@@ -29,8 +32,10 @@ export class ProfilePageComponent {
   click?: CartLayoutComponent | OrderLayoutComponent;
   cartService = inject(CartService);
   orderService = inject(OrderService);
+  cookieService = inject(CookieService);
   orders: Order[] = [];
   cart!: Cart;
+  role = localStorage.getItem('role');
   userId = localStorage.getItem('user_id')!
   onButtonClick($event: CartLayoutComponent | OrderLayoutComponent) {
     this.click = $event;
@@ -46,6 +51,15 @@ export class ProfilePageComponent {
       .subscribe(val => {
         this.orders = val;
       });
+  }
+
+  logout() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('user_id');
+    localStorage.removeItem('cartId');
+    this.cookieService.delete('access_token');
+    localStorage.removeItem('role');
+    window.location.reload();
   }
 
   protected readonly CartLayout: CartLayoutComponent = new CartLayoutComponent();

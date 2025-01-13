@@ -31,9 +31,9 @@
       <div class="purchase__buttons">
         <div class="purchase-info" [ngStyle]="{display: infoDisplay}">
           <app-count
+            [count]="1"
             (changeCount)="changeCounts($event)"
           >
-
           </app-count>
           <button class="btn-cart btn-add" (click)="addToCart()">
             <svg width="24px" height="24px" icon="cartAdd"></svg>

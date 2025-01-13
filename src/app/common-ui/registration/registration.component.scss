@@ -1,0 +1,67 @@
+.login-form {
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  background: var(--light-color);
+  color: var(--dark-color);
+  box-shadow: #000000 0 6px 20px 0;
+}
+
+.control-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.l-input {
+  margin-top: 8px;
+  border: 1px solid var(--dark-color);
+  border-radius: 4px;
+  padding: 12px 20px;
+}
+
+.btn {
+  width: 100%;
+  border: 1px solid var(--dark-color);
+  border-radius: 4px;
+  background: var(--light-color);
+  color: var(--dark-color);
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.btn:hover {
+  background: var(--btn-hover-color);
+}
+
+.password-input {
+  position: relative;
+  width: 100%;
+
+}
+
+.password-eye-btn {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--dark-color);
+  cursor: pointer;
+}
+
+.password-eye-btn.active {
+  color: var(--footer-bg-color);
+}
+
+.login-to-registration {
+  text-decoration: underline;
+  cursor: pointer;
+}

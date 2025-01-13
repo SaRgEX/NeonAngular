@@ -4,11 +4,13 @@
       <app-cart
         [cart]="cart"
         (changeCount)="changeCounts($event)"
+        (onDelete)="deleteComposition($event)"
       >
       </app-cart>
       <div class="payment__interaction">
-        <button class="btn-payment">Перейти к оформлению</button>
-        <p>Цена к оплате: {{ count }} ₽</p>
+        <button class="btn-payment" (click)="createOrder()">Перейти к оформлению</button>
+        <p>Товаров: {{ count }}</p>
+        <p>Цена к оплате: {{ totalPrice }} ₽</p>
       </div>
     } @else {
       <h3>

@@ -14,13 +14,13 @@ import {CartCompositionComponent} from '../cart-composition/cart-composition.com
 export class CartComponent {
   @Input() cart!: Cart;
   @Output() changeCount = new EventEmitter<[number, number]>();
+  @Output() onDelete = new EventEmitter<number>();
   public changeCounts([change, productId]: [number, number]) {
     this.changeCount.emit([change, productId]);
   }
 
   public deleteComposition(id: number) {
-    console.log(id)
-    this.cart.compositions = this.cart.compositions.filter(composition => composition.id !== id)
+    this.onDelete.emit(id);
   }
   constructor() {
   }

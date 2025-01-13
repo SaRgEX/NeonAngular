@@ -22,9 +22,14 @@ export class AuthService {
           this.token = val.accessToken;
           let userId = decodedToken.user.toString()
           this.cookieService.set('access_token', this.token);
+          localStorage.setItem('role', decodedToken["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"])
           localStorage.setItem('user_id', userId)
         })
       )
+  }
+
+  registration(payload: {login: string, password: string}) {
+    return this.http.post<Response>(`${this.baseApiUrl}api/Auth/Registration`, payload)
   }
 
   get isAuth() {
@@ -32,6 +37,13 @@ export class AuthService {
       this.token = this.cookieService.get('access_token');
     }
     return !!this.token;
+  }
+
+  get logout() {
+    this.cookieService.delete('access_token');
+    localStorage.removeItem('user_id');
+    this.token = null;
+    return true;
   }
 
   constructor() {

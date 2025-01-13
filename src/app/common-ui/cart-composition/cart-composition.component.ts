@@ -27,6 +27,11 @@ export class CartCompositionComponent {
   count = 1;
   userId = parseInt(localStorage.getItem('user_id')!);
 
+  constructor() {
+    setTimeout(() => {
+      this.count = this.composition.count;
+    }, 500);
+  }
 
   public changeCounts(change: number) {
     this.count = change;
@@ -39,7 +44,6 @@ export class CartCompositionComponent {
   }
 
   deleteProduct() {
-    console.log(this.composition.product.id)
     this.cartService.deleteProduct(this.userId, this.composition.product.id).subscribe();
     this.deleteComposition.emit(this.composition.id);
   }

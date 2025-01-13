@@ -32,6 +32,12 @@ export class CartService {
     )
   }
 
+  cartPay(userId: number) {
+    return this.http.patch(`${this.baseApiUrl}api/Profile/cart/${userId}`, {}).pipe(
+      catchError(this.handleError)
+    )
+  }
+
   addToCart(payload: {orderId: number, productId: number, count: number}) {
     return this.http.post<Response>(`${this.baseApiUrl}api/OrderComposition`, payload)
       .pipe(

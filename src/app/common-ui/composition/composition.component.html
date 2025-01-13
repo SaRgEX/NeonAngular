@@ -1,17 +1,14 @@
 @if (composition.product) {
   <div class="composition__wrapper">
     <div class="composition-container">
-      <div class="composition__img">
+      <a [routerLink]="['/product/', composition.product.id]" class="composition__img">
         <img [src]="composition.product.imagePath" [alt]="composition.product.name" class="composition__img">
-      </div>
+      </a>
       <p>{{ composition.product.name }}</p>
       <div class="composition-price">
-        <p>{{ composition.product.cost }}</p>
-        <p>{{ composition.product.count }}</p>
+        <p>Цена: {{ composition.product.cost }} ₽</p>
+        <p>Количество: {{ composition.product.count }} шт.</p>
       </div>
-    </div>
-    <div class="composition-interaction">
-      <button>DELETE</button>
     </div>
   </div>
 } @else {

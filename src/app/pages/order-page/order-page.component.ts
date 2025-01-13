@@ -1,9 +1,10 @@
 import {Component, inject} from '@angular/core';
 import {OrderService} from '../../data/services/order.service';
 import {ActivatedRoute} from '@angular/router';
-import {switchMap} from 'rxjs';
-import {AsyncPipe} from '@angular/common';
+import {switchMap, take} from 'rxjs';
+import {AsyncPipe, formatDate} from '@angular/common';
 import {CompositionComponent} from '../../common-ui/composition/composition.component';
+import {Order} from '../../data/interfaces/order.interface';
 
 @Component({
   selector: 'app-order-page',
@@ -22,7 +23,6 @@ export class OrderPageComponent {
     .pipe(switchMap(({id}) => {
       return this.orderService.getOrder(id)
     }));
-
   constructor() {
   }
 }

@@ -1,27 +1,35 @@
 :host {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  max-width: 1440px;
-  margin: 12px auto 100px;
-  background-color: var(--light-color);
   border-radius: 12px;
   padding: 12px;
   gap: 10px;
+  width: 100%;
   color: var(--dark-color);
 }
 
 .composition__img {
-  width: 150px;
+  width: 100px;
+  border-radius: 0 0 12px 12px;
 }
 
 .composition__wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  border-radius: 14px;
+  padding-top: 14px;
+  color: var(--light-color);
+  gap: 10px;
+  width: 100%;
 }
 
 .composition-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 100%;
+  background: var(--light-color);
+  color: var(--dark-color);
+  border-radius: 12px;
+  padding: 12px;
 }

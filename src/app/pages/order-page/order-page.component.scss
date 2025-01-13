@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  max-width: 1440px;
+  margin: 12px auto 100px;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px
+}
+
+.order__wrapper {
+  display: flex;
+  flex-direction: column;
+  color: var(--dark-color)
+}

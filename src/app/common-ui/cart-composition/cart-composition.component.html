@@ -1,7 +1,6 @@
 @if (composition.product) {
   <div class="cart-composition__wrapper">
     <div class="cart-composition-container">
-      <input type="checkbox" class="cb-cart">
       <div class="composition__image">
         <a [routerLink]="['/product/'+composition.product.id]">
           <img class="composition__image" [src]="composition.product.imagePath" [alt]="composition.product.name">

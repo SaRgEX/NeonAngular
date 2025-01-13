@@ -5,6 +5,10 @@
       <div class="menu-items">
         <button (click)="onButtonClick(CartLayout)" class="profile-menu__buttons">Корзина</button>
         <button (click)="onButtonClick(OrderLayout)" class="profile-menu__buttons">Заказы</button>
+        @if(role == "Admin") {
+          <button class="profile-menu__buttons" [routerLink]="['/admin']">Админ-панель</button>
+        }
+        <button (click)="logout()" class="profile-menu__buttons">Выйти</button>
       </div>
     </div>
     <div class="profile-container" [ngSwitch]="click">

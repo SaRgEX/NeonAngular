@@ -4,4 +4,5 @@ export interface Composition {
   id: number
   count: number,
   product: Product,
+  createdAt: Date | string,
 }
