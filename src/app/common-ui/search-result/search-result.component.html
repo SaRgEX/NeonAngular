@@ -1,0 +1,17 @@
+@if (product) {
+  <a class="link" [routerLink]="['/product/', product.id]" (click)="onClickResult('')">
+    <div class="search-result__wrapper">
+      <div class="search-result-container">
+        <div class="search-result__image">
+          <img class="search-result__image" [src]="product.imagePath" [alt]="product.name">
+        </div>
+        <div class="search-result__info">
+          <h4>{{ product.name }}</h4>
+        </div>
+        <div class="search-result__price">
+          <h4>Цена: {{product.cost}} ₽</h4>
+        </div>
+      </div>
+    </div>
+  </a>
+}

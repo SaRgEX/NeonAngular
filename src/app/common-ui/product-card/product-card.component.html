@@ -1,7 +1,7 @@
 @if (product) {
   <a
     class="product-container"
-    [routerLink]="'product/'+product.id"
+    [routerLink]="'/product/'+product.id"
   >
     <div class="product">
       <div class="container__img">
@@ -25,5 +25,5 @@
     </div>
   </a>
 } @else {
-  Not Found
+  Не найден
 }

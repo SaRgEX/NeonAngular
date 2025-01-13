@@ -8,13 +8,14 @@ import {canActivateAuth, isAdmin} from './auth/access_guard';
 import {CartComponent} from './common-ui/cart/cart.component';
 import {OrderPageComponent} from './pages/order-page/order-page.component';
 import {AdminPageComponent} from './common-ui/admin-page/admin-page.component';
+import {FilteredProductsComponent} from './common-ui/filtered-products/filtered-products.component';
 
 export const routes: Routes = [
     {
       path: '', component: LayoutComponent, children: [
         {path: '', component: MainPageComponent},
         {path: 'product/:id', component: ProductPageComponent},
-
+        { path: 'category/:title', component: FilteredProductsComponent },
         {
           path: 'me', children: [
             {path: 'profile', component: ProfilePageComponent},

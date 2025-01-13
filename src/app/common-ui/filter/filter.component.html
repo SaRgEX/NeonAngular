@@ -1,0 +1,11 @@
+@if (Category) {
+  <a class="link" [routerLink]="['/category/'+Category.title]" (click)="onClickResult('')">
+    <div class="filter__wrapper">
+      <div class="filter-container">
+        <div class="filter__info">
+          <h4>{{ Category.title }}</h4>
+        </div>
+      </div>
+    </div>
+  </a>
+}
