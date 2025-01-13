@@ -42,3 +42,26 @@
   font-weight: 700;
   line-height: 24px;
 }
+
+.btn:hover {
+  background: var(--btn-hover-color);
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-eye-btn {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--dark-color);
+  cursor: pointer;
+}
+
+.password-eye-btn.active {
+  color: var(--footer-bg-color);
+}

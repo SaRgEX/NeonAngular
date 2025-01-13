@@ -1,8 +1,13 @@
 @if (order) {
-
-<div class="order__container">
-  <p>{{order.id}}</p>
-</div>
+  <div class="order__container" (click)="onOrderClick()">
+    <p>Номер заказа: {{ order.title }}</p>
+    <p>Дата заказа: {{ formatedDate }}</p>
+  </div>
+  <style>
+    :host {
+      justify-content: flex-start;
+    }
+  </style>
 } @else {
   Заказов нет
 }

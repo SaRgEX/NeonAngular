@@ -1,15 +1,22 @@
 <ng-container>
   <div class="profile__wrapper">
     <div class="profile_menu">
-      <h3 class="h3">Profile</h3>
+      <h3 class="h3">Ваш профиль</h3>
       <div class="menu-items">
-        <button (click)="onButtonClick(OrderComponent)" class="profile-menu__buttons">Заказы</button>
-        <button (click)="onButtonClick(CartComponent)" class="profile-menu__buttons">Корзина</button>
+        <button (click)="onButtonClick(CartLayout)" class="profile-menu__buttons">Корзина</button>
+        <button (click)="onButtonClick(OrderLayout)" class="profile-menu__buttons">Заказы</button>
       </div>
     </div>
     <div class="profile-container" [ngSwitch]="click">
-      <app-order *ngSwitchDefault></app-order>
-      <app-cart *ngSwitchCase="CartComponent"></app-cart>
+      <app-cart-layout
+        *ngSwitchDefault
+        [cart]="cart"
+      ></app-cart-layout>
+      <app-order-layout
+        *ngSwitchCase="OrderLayout"
+        [orders]="orders"
+      ></app-order-layout>
+
     </div>
   </div>
 </ng-container>

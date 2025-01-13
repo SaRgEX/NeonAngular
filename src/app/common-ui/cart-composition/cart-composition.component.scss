@@ -1,0 +1,57 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.cart-composition__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cart-composition-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.composition__image {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+}
+
+.composition__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.btn-delete {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.svg-delete {
+  width: 24px;
+  height: 24px;
+  background: none;
+}
+
+.svg-delete:hover {
+  color: var(--delete-color)
+}
+
+.composition__price {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.composition__count {
+  display: flex;
+}

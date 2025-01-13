@@ -29,10 +29,17 @@
 }
 
 .menu {
+  display: flex;
   cursor: pointer;
 }
 
 .menu:hover {
   opacity: 0.9;
   transform: scale(0.95);
+}
+
+.menu-user {
+  width: 48px;
+  height: 48px;
+  display: flex;
 }

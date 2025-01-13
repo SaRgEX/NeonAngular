@@ -1,11 +1,21 @@
 :host {
+  max-width: 1440px;
+  margin: 12px auto 100px;
+}
+
+.profile-container {
+  border-radius: 10px;
+  color: var(--dark-color);
+  position: relative;
 }
 
 .profile__wrapper {
   max-width: 1440px;
   margin: 12px auto 100px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 20px;
+  height: 90%;
 }
 
 .profile_menu {
@@ -16,6 +26,8 @@
   padding: 10px;
   border-radius: 10px;
   gap: 10px;
+  position: sticky;
+  top: 0;
 }
 
 .h3 {

@@ -1,0 +1,14 @@
+<div class="order__wrapper" [ngStyle]="{'justify-content': Justify}">
+  @if (orders.length !== 0) {
+    @for (order of orders; track order.id) {
+      <app-order
+        [order]="order"
+      >
+      </app-order>
+    }
+  } @else {
+    <h3>
+      Заказов нет
+    </h3>
+  }
+</div>

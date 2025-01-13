@@ -1,0 +1,9 @@
+@if (order$ | async; as order) {
+  @if (order.compositions.length > 0) {
+    <div class="order__wrapper">
+      @for (product of order.compositions; track product.id) {
+        <app-composition [composition]="product"></app-composition>
+      }
+    </div>
+  }
+}

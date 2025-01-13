@@ -7,6 +7,9 @@
   --dark-color: #000000;
   --footer-bg-color: #3A3A3A;
   --font-family: "Inter", sans-serif;
+  --btn-hover-color: #eaeaea;
+  --btn-enter-color: #10C44CFF;
+  --delete-color: #ff2828;
 }
 
 *,

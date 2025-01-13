@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 12px auto 100px;
+  background-color: var(--light-color);
+  border-radius: 12px;
+  padding: 12px;
+  gap: 10px;
+  color: var(--dark-color);
+}
+
+.composition__img {
+  width: 150px;
+}
+
+.composition__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.composition-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}

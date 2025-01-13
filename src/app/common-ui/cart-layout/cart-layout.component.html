@@ -1,0 +1,23 @@
+<div class="cart__wrapper" [ngStyle]="{'justify-content': Justify}">
+  @if (cart) {
+    @if (cart.compositions.length !== 0) {
+      <app-cart
+        [cart]="cart"
+        (changeCount)="changeCounts($event)"
+      >
+      </app-cart>
+      <div class="payment__interaction">
+        <button class="btn-payment">Перейти к оформлению</button>
+        <p>Цена к оплате: {{ count }} ₽</p>
+      </div>
+    } @else {
+      <h3>
+        Корзина пуста
+      </h3>
+    }
+  } @else {
+    <h3>
+      Корзина пуста
+    </h3>
+  }
+</div>

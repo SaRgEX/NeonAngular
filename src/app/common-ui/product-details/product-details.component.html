@@ -8,18 +8,38 @@
         (error)="onError()"
       />
     </div>
-    <div class="product-details__info">
-      <h2>{{product.name}}</h2>
-      <p>Категория: {{product.category}}</p>
-      <p>Производитель: {{product.manufacturer}}</p>
-      <p>{{product.description}}</p>
-      <div class="info__wrapper">
-        <p>Цена: {{product.cost}}₽</p>
-        <p>Количество: {{product.count}}</p>
+    <div class="product-details__wrapper">
+      <div class="product-details__info mb64">
+        <div class="detail__description">
+          <h2>{{ product.name }}</h2>
+          <div class="product__category">
+            <p>Категория: {{ product.category }}</p>
+            <p>Производитель: {{ product.manufacturer }}</p>
+          </div>
+        </div>
       </div>
-      <div class="product-details__buttons">
-        <button>Добавить в корзину</button>
-        <button>Купить</button>
+      <div class="product__description">
+        <h2>Описание товара: </h2>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+    <div class="product-purchase">
+      <div class="info__wrapper">
+        <h2>Цена: {{ product.cost * count }}₽</h2>
+        <p>Количество: {{ product.count }} шт.</p>
+      </div>
+      <div class="purchase__buttons">
+        <div class="purchase-info" [ngStyle]="{display: infoDisplay}">
+          <app-count
+            (changeCount)="changeCounts($event)"
+          >
+
+          </app-count>
+          <button class="btn-cart btn-add" (click)="addToCart()">
+            <svg width="24px" height="24px" icon="cartAdd"></svg>
+          </button>
+        </div>
+        <button class="btn-cart" (click)="changeCount()" [ngStyle]="{'display': display}">Добавить в корзину</button>
       </div>
     </div>
   </div>

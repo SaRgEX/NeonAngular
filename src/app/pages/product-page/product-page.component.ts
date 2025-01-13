@@ -22,8 +22,8 @@ export class ProductPageComponent {
     .pipe(
       switchMap(({id}) => {
         return this.productService.getProduct(id)
-})
-    )
+}));
+
   constructor() {
   }
 }

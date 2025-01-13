@@ -1,0 +1,24 @@
+@if (composition.product) {
+  <div class="cart-composition__wrapper">
+    <div class="cart-composition-container">
+      <input type="checkbox" class="cb-cart">
+      <div class="composition__image">
+        <a [routerLink]="['/product/'+composition.product.id]">
+          <img class="composition__image" [src]="composition.product.imagePath" [alt]="composition.product.name">
+        </a>
+      </div>
+      <div class="composition__info">
+        <h4>{{ composition.product.name }}</h4>
+        <button class="btn-delete" (click)="deleteProduct()">
+          <svg class="svg-delete" icon="delete"></svg>
+        </button>
+      </div>
+    </div>
+    <div class="composition__price">
+      <h3>Цена: {{composition.product.cost * count}} ₽</h3>
+      <div class="composition__count">
+        <app-count [count]="composition.count" (changeCount)="changeCounts($event)"></app-count>
+      </div>
+    </div>
+  </div>
+}

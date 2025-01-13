@@ -1,5 +1,6 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Order} from '../interfaces/order.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,12 @@ export class OrderService {
   baseApiUrl = 'https://localhost:7291/';
   constructor() { }
 
-  getOrder() {
+  getOrders(id: number) {
+    return this.http.get<Order[]>(`${this.baseApiUrl}api/Profile/orders/${id}`)
+  }
 
+  getOrder(id: number) {
+    return this.http.get<Order>(`${this.baseApiUrl}api/Order/${id}`)
   }
 
 

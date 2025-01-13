@@ -1,6 +1,6 @@
 ﻿import {Composition} from './composition.interface';
 
-export interface Order {
+export interface Cart {
   id: number,
   title: string,
   compositions: Composition[],

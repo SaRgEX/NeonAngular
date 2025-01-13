@@ -1,0 +1,4 @@
+<button class="increase-btn btn-info" (click)="increase(count)">+</button>
+<input name="count" [(ngModel)]="count" [value]="count" [min]="1" [max]="9999" (keyup)="inputLength(count)" size="4"
+       type="number" class="tt_count">
+<button class="decrease-btn btn-info" (click)="decrease(count)">-</button>
