@@ -1,0 +1,42 @@
+:host {
+  background: #2A3F54;
+}
+
+.sideArea {
+  width: 200px;
+  min-width: 200px;
+  background: #2A3F54;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.container.is-click .sideArea {
+  left: -200px;
+}
+.sideArea li>a {
+  display: block;
+  color: #fff;
+  padding: 1em;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.sideArea li>a:hover {
+  background: rgba(255,255,255,0.1);
+}
+.sideArea li>a>.fa {
+  width: 1em;
+  text-align: center;
+  margin-right: 10px;
+}
+.submenu {
+  display: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.submenu li>a {
+  padding-left: 2em;
+  border-bottom: none;
+}
+.sideMenu {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}

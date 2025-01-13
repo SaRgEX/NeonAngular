@@ -1,0 +1,31 @@
+@if (products) {
+  <div class="product-table__wrapper">
+    <table class="product__table">
+      <thead class="table-head">
+        <tr class="table-head__name">
+          <th>ID</th>
+          <th>Название</th>
+          <th>Производитель</th>
+          <th>Категория</th>
+          <th>Количество</th>
+          <th>Цена</th>
+        </tr>
+      </thead>
+      <tbody class="table-body">
+        @for (product of products; track product.id) {
+          <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.manufacturer }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.count }}</td>
+            <td>{{ product.cost }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+} @else {
+  <h2>Товаров нет.</h2>
+}
+

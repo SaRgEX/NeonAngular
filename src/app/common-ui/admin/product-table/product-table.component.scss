@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  max-width: 1440px;
+  width: 100%;
+  place-self: center;
+}
+
+.product-table__wrapper {
+  background-color: var(--footer-bg-color);
+  color: var(--light-color);
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  padding: 12px;
+}
+
+.product__table {
+  width: 100%;
+  background: var(--light-color);
+  color: var(--dark-color);
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px;
+}
+

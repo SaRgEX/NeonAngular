@@ -10,27 +10,28 @@ import {OrderPageComponent} from './pages/order-page/order-page.component';
 import {AdminPageComponent} from './common-ui/admin-page/admin-page.component';
 
 export const routes: Routes = [
-  {
-    path: '', component: LayoutComponent, children: [
-      {path: '', component: MainPageComponent},
-      {path: 'product/:id', component: ProductPageComponent},
+    {
+      path: '', component: LayoutComponent, children: [
+        {path: '', component: MainPageComponent},
+        {path: 'product/:id', component: ProductPageComponent},
 
-      {
-        path: 'me', children: [
-          {path: 'profile', component: ProfilePageComponent},
-          {path: 'order/:id', component: OrderPageComponent},
-          {path: 'cart', component: CartComponent},
-        ],
-        canActivate: [canActivateAuth]
-      },
-      {
-        path: 'admin', children: [
-          {
-            path: '', component: AdminPageComponent
-          }
-        ], canActivate: [canActivateAuth, isAdmin]
-      },
-      {path: 'login', component: LoginPageComponent}
-    ]
-  },
-];
+        {
+          path: 'me', children: [
+            {path: 'profile', component: ProfilePageComponent},
+            {path: 'order/:id', component: OrderPageComponent},
+            {path: 'cart', component: CartComponent},
+          ],
+          canActivate: [canActivateAuth]
+        },
+        {path: 'login', component: LoginPageComponent}
+      ]
+    },
+    {
+      path: 'admin', children: [
+        {
+          path: '', component: AdminPageComponent
+        }
+      ], canActivate: [canActivateAuth, isAdmin]
+    },
+  ]
+;

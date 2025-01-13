@@ -1,0 +1,143 @@
+.filterGroup {
+  margin-bottom: 20px;
+}
+
+.formSearch {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container-label {
+  border: 1px solid var(--dark-color);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.inputSearch {
+  background: none;
+  outline: none;
+  border: none;
+  height: 100%;
+}
+
+.btnSearch {
+  background: none;
+  border: none;
+}
+/* SORT */
+.boxSelect {
+  min-width: 12em;
+  background: #fff;
+  position: relative;
+}
+.titleSelect {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#000,#000);
+  background-size: 0 1px;
+  background-position: bottom left;
+  transition: background-size 0.5s;
+  padding: 0.4em 1em;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.titleSelect.is-active {
+  background-size: 100% 1px;
+}
+.optionSelect {
+  width: 100%;
+  position: absolute;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 100;
+  visibility: hidden;
+  overflow: hidden;
+  transform: translateX(100%);
+  transition: 0.2s;
+}
+.titleSelect.is-active+.optionSelect {
+  visibility: visible;
+  transform: translateX(0);
+}
+.optionSelect li a {
+  width: 100%;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+.optionSelect li a:hover {
+  background: rgba(42,63,84,0.1);
+}
+
+.btnFilter {
+  padding: 0.4em 1em;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.boxFilter .btnFilter {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.btnFilter>.fa {
+  margin-right: 0.5em;
+}
+.boxFilter {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -200px;
+  background: #fff;
+  padding: 20px;
+  border-left: 1px solid #ccc;
+  z-index: 800;
+  transition: right 0.5s;
+}
+.boxFilter.is-active {
+  right: 0;
+}
+.boxFilter .groupInput {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+}
+.boxFilter select {
+  margin-bottom: 20px;
+}
+.boxFilter select {
+  width: 100%;
+}
+.boxFilter .btnClose {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.boxFilter .btnClose>.fa {
+  margin-right: 1em;
+}
+
+/* FILTER PRICE */
+#filterPrice {
+  width: 100%;
+  height: 5px;
+  margin: 1em 0;
+}
+.areaValue {
+  margin-top: 2em;
+}
+.rangeValue {
+  display: block;
+  width: 100%;
+  height: 2em;
+  text-align: center;
+}
+#filterPrice .rangeValue:nth-child(1) {
+  left: 0;
+}
+#filterPrice .rangeValue:nth-child(2) {
+  right: 0;
+}

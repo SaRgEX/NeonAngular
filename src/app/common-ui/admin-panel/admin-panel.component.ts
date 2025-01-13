@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-admin-panel',
   imports: [],
   templateUrl: './admin-panel.component.html',
+  standalone: true,
   styleUrl: './admin-panel.component.scss'
 })
 export class AdminPanelComponent {
