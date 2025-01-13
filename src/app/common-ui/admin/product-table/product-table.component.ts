@@ -26,10 +26,11 @@ export class ProductTableComponent {
 
   form: FormGroup = new FormGroup({
     name: new FormControl(null, Validators.required),
-    manufacturer: new FormControl(null, Validators.required),
-    category: new FormControl(null, Validators.required),
-    cost: new FormControl(null, [Validators.required, Validators.min(0)]),
-    count: new FormControl(null, [Validators.required, Validators.min(1)]),
+    manufacturerId: new FormControl(null, Validators.required),
+    categoryId: new FormControl(null, Validators.required),
+    cost: new FormControl(null, [Validators.required]),
+    count: new FormControl(null),
+    description: new FormControl(null),
     imagePath: new FormControl(null, Validators.required)
   })
 
@@ -40,18 +41,20 @@ export class ProductTableComponent {
     this.extendedInfo.set(!this.extendedInfo())
   }
   get Open() {
-    return this.openCreation() ? 'grid' : 'none';
+    return this.openCreation() ? 'flex' : 'none';
   }
   get Close() {
     return this.openCreation()? 'none' : 'flex';
   }
 
   onSubmit() {
+    console.log("wait")
+    console.log(this.form.value)
+    console.log(this.form.valid)
     if (this.form.valid) {
       this.productService.addProduct(this.form.value)
         .subscribe(res => {
-          if (res.status !== 200) return
-          this.loadProducts()
+          window.location.reload()
         })
     }
   }

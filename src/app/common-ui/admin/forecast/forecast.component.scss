@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 100%;
+}
+
+.mainArea {
+  width: 100%;
+  padding: 10px;
+  position: relative;
+}
+
+.mainContent {
+  display: flex;
+  align-items: center;
+  place-self: center;
+  border-radius: 12px;
+  padding-right: 12px;
+  margin: 10px;
+  max-width: 1440px;
+  width: 1440px;
+}
+
+.forecast {
+  max-width: 1440px;
+  width: 1440px;
+}

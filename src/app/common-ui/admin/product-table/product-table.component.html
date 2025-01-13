@@ -76,14 +76,24 @@
       }
       <div class="add-product">
         <button class="btn add" (click)="openCreation.set(!openCreation())" [style.display]="Close"><svg class="add" icon="add"></svg></button>
-        <form [formGroup]="form" class="product__creation" method="post" [style.display]="Open">
-          <input formControlName="name" class="product__input" type="text" placeholder="Название">
-          <input formControlName="manufacturer" class="product__input" type="text"  placeholder="Производитель">
-          <input formControlName="category" class="product__input" type="text" placeholder="Категория">
-          <input formControlName="count" class="product__input" type="number" placeholder="Количество">
-          <input formControlName="cost" class="product__input" type="number" placeholder="Цена">
-          <button class="btn-primary add-product__btn" (click)="onSubmit()" type="submit">Добавить</button>
-          <button class="btn-primary cancel-btn" type="reset" (click)="openCreation.set(!openCreation())">Отменить</button>
+        <form [formGroup]="form" class="product__creation" method="post" (ngSubmit)="onSubmit()" [style.display]="Open">
+          <div class="form-container">
+            <div class="main-info">
+              <input formControlName="name" class="product__input" type="text" placeholder="Название">
+              <input formControlName="manufacturerId" class="product__input" type="number"  placeholder="Производитель">
+              <input formControlName="categoryId" class="product__input" type="number" placeholder="Категория">
+              <input formControlName="cost" class="product__input" type="number" placeholder="Цена">
+              <input formControlName="count" class="product__input" type="number" placeholder="Количество">
+            </div>
+            <div class="extended-info__product">
+              <textarea formControlName="description" class="product__input" type="number" placeholder="Описание"></textarea>
+              <input formControlName="imagePath" class="product__input" type="text" placeholder="Путь до изображения">
+            </div>
+          </div>
+
+          <button class="btn-primary add-product__btn" type="submit">Добавить</button>
+
+          <button class="btn-primary cancel-btn" (click)="openCreation.set(!openCreation())">Отменить</button>
         </form>
       </div>
     </div>

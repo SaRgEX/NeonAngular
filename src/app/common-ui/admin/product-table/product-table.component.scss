@@ -121,12 +121,22 @@
 }
 
 .product__creation {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.1fr 0.1fr;
-  grid-gap: 10px;
+  display: flex;
+  flex-direction: row;
   align-items: flex-start;
   margin-left: 5.9rem;
   width: 100%;
+}
+
+.form-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.main-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.1fr 0.1fr;
+  grid-gap: 10px;
 }
 
 .product__input {

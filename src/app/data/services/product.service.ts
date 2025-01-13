@@ -25,11 +25,11 @@ export class ProductService {
   }
   addProduct(payload: {
     name: string,
-    description: string,
-    manufacturer: string,
-    category: string,
+    manufacturerId: number,
+    categoryId: number,
     cost: number,
     count: number,
+    description: string,
     imagePath: string | null
   }) {
     return this.http.post<HttpResponse<ServerResponse>>(`${this.baseApiUrl}api/Product`, payload).pipe(

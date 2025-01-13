@@ -1,8 +1,11 @@
 import {Component, Input} from '@angular/core';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './sidebar.component.html',
   standalone: true,
   styleUrl: './sidebar.component.scss'

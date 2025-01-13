@@ -9,6 +9,7 @@ import {CartComponent} from './common-ui/cart/cart.component';
 import {OrderPageComponent} from './pages/order-page/order-page.component';
 import {AdminPageComponent} from './common-ui/admin-page/admin-page.component';
 import {FilteredProductsComponent} from './common-ui/filtered-products/filtered-products.component';
+import {ForecastComponent} from './common-ui/admin/forecast/forecast.component';
 
 export const routes: Routes = [
     {
@@ -29,9 +30,8 @@ export const routes: Routes = [
     },
     {
       path: 'admin', children: [
-        {
-          path: '', component: AdminPageComponent
-        }
+        { path: '', component: AdminPageComponent },
+        { path: 'forecast', component: ForecastComponent }
       ], canActivate: [canActivateAuth, isAdmin]
     },
   ]
