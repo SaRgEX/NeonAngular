@@ -19,7 +19,7 @@ export class MainPageComponent {
   constructor() {
     this.productService.getProducts()
       .subscribe(val => {
-        this.products = val
+        this.products = val.filter((product) => product.count > 0)
       });
   }
 }

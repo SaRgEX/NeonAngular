@@ -15,7 +15,6 @@ export const canActivateAuth = () => {
 
 export const isAdmin = () => {
   let role = localStorage.getItem('role');
-  console.log(role)
   if (role === 'Admin') {
     return true;
   }

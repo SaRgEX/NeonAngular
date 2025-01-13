@@ -2,7 +2,7 @@
   @if (order.compositions.length > 0) {
     <div class="order__wrapper">
       <div class="order-info">
-        <h2>Заказ {{ order.id }}</h2>
+        <h2>Заказ {{ order.title }}</h2>
       </div>
       @for (product of order.compositions; track product.id) {
         <app-composition [composition]="product"></app-composition>

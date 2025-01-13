@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {NavbarComponent} from '../admin/navbar/navbar.component';
 import {FilterComponent} from '../admin/filter/filter.component';
 import {SidebarComponent} from '../admin/sidebar/sidebar.component';
@@ -20,7 +20,12 @@ import {Product} from '../../data/interfaces/product.interface';
 })
 export class AdminPageComponent {
   productService = inject(ProductService)
-  products: Product[] = []
+  products: Product[] = [];
+  hide = signal<boolean>(false)
+
+  hideSidebar(change: boolean) {
+    this.hide.set(change)
+  }
   ngOnInit() {
     this.productService.getProducts().subscribe(
       (products) => {

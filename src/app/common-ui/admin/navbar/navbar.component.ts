@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, effect, output, signal} from '@angular/core';
 import {SvgIconComponent} from '../../svg-icon/svg-icon.component';
 import {RouterLink} from '@angular/router';
 
@@ -13,5 +13,11 @@ import {RouterLink} from '@angular/router';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-
+  hide = output<boolean>()
+  hideMenu = signal<boolean>(false)
+  constructor() {
+    effect(() => {
+      this.hide.emit(this.hideMenu())
+    });
+  }
 }

@@ -1,29 +1,92 @@
 @if (products) {
   <div class="product-table__wrapper">
-    <table class="product__table">
-      <thead class="table-head">
-        <tr class="table-head__name">
-          <th>ID</th>
-          <th>Название</th>
-          <th>Производитель</th>
-          <th>Категория</th>
-          <th>Количество</th>
-          <th>Цена</th>
-        </tr>
-      </thead>
-      <tbody class="table-body">
-        @for (product of products; track product.id) {
-          <tr>
-            <td>{{ product.id }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.manufacturer }}</td>
-            <td>{{ product.category }}</td>
-            <td>{{ product.count }}</td>
-            <td>{{ product.cost }}</td>
-          </tr>
-        }
-      </tbody>
-    </table>
+    <div class="product-table">
+      <div class="table-header">
+        <div class="cell">
+          <input type="checkbox" class="cb" (click)="chooseAll()">
+        </div>
+        <div class="cell">
+          <p>ID</p>
+        </div>
+        <div class="cell">
+          <p>Название</p>
+        </div>
+        <div class="cell">
+          <p>Производитель</p>
+        </div>
+        <div class="cell">
+          <p>Категория</p>
+        </div>
+        <div class="cell">
+          <p>Количество</p>
+        </div>
+        <div class="cell">
+          <p>Цена</p>
+        </div>
+        <div class="cell">
+          <button class="btn btn-danger delete"><svg class="delete" icon="delete"></svg></button>
+        </div>
+      </div>
+      @for (product of products; track product.id) {
+        <div class="table-body">
+          <div class="minimal-info">
+            <div class="cell">
+              <input [checked]="checked()" type="checkbox" class="table-body__cb cb">
+            </div>
+            <div class="cell">
+              <p>{{ product.id }}</p>
+            </div>
+            <div class="cell">
+              <p>{{ product.name }}</p>
+            </div>
+            <div class="cell">
+              <p>{{ product.manufacturer }}</p>
+            </div>
+            <div class="cell">
+              <p>{{ product.category }}</p>
+            </div>
+            <div class="cell">
+              <p>{{ product.count }}</p>
+            </div>
+            <div class="cell">
+              <p>{{ product.cost }}</p>
+            </div>
+            <div class="cell">
+              <button class="btn btn-danger delete"><svg class="delete" icon="delete"></svg></button>
+            </div>
+            <div class="cell">
+              <button class="btn btn-extended" (click)="showDescription(product.id)"
+              >
+                <
+              </button>
+            </div>
+          </div>
+          @if(extendedInfoMap.get(product.id)!()) {
+            <div class="extended-info">
+              <div class="product-description">
+                <p>{{product.description}}</p>
+              </div>
+              <div class="product-image">
+                <img class="product-img" [src]="product.imagePath">
+                <p class="product-img__path">{{product.imagePath}}</p>
+              </div>
+            </div>
+          }
+        </div>
+      }
+      <div class="add-product">
+        <button class="btn add" (click)="openCreation.set(!openCreation())" [style.display]="Close"><svg class="add" icon="add"></svg></button>
+        <form [formGroup]="form" class="product__creation" method="post" [style.display]="Open">
+          <input formControlName="name" class="product__input" type="text" placeholder="Название">
+          <input formControlName="manufacturer" class="product__input" type="text"  placeholder="Производитель">
+          <input formControlName="category" class="product__input" type="text" placeholder="Категория">
+          <input formControlName="count" class="product__input" type="number" placeholder="Количество">
+          <input formControlName="cost" class="product__input" type="number" placeholder="Цена">
+          <button class="btn-primary add-product__btn" (click)="onSubmit()" type="submit">Добавить</button>
+          <button class="btn-primary cancel-btn" type="reset" (click)="openCreation.set(!openCreation())">Отменить</button>
+        </form>
+      </div>
+    </div>
   </div>
 } @else {
   <h2>Товаров нет.</h2>

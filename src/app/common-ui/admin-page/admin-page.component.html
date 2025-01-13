@@ -1,7 +1,7 @@
 <div class="container">
-  <app-sidebar></app-sidebar>
+  <app-sidebar [hide]="hide()"></app-sidebar>
   <div class="mainArea">
-    <app-navbar></app-navbar>
+    <app-navbar (hide)="hideSidebar($event)"></app-navbar>
     <div class="mainContent">
       <app-filter></app-filter>
 
