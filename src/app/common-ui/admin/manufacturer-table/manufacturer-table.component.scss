@@ -37,7 +37,7 @@
 
 .table-header {
   display: grid;
-  grid-template-columns: 0.2fr 0.2fr 1fr 1fr 1fr 1fr 1fr 0.1fr 0.1fr;
+  grid-template-columns: 0.1fr 1fr 1fr 0.2fr 0.2fr;
   align-items: center;
 
   :first-child, :last-child {
@@ -90,7 +90,7 @@
 
 .minimal-info {
   display: grid;
-  grid-template-columns: 0.2fr 0.2fr 1fr 1fr 1fr 1fr 1fr 0.1fr 0.1fr;
+  grid-template-columns: 0.1fr 1fr 1fr 0.2fr 0.2fr;
   border: 1px solid;
   align-items: flex-start;
   :first-child, :last-child {
@@ -135,7 +135,7 @@
 
 .main-info {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.1fr 0.1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
 }
 

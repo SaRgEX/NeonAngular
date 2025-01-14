@@ -1,0 +1,50 @@
+@if (product) {
+  <form [formGroup]="form" class="table-body">
+    <div class="minimal-info">
+      <div class="cell">
+        <input [checked]="checked()" type="checkbox" class="table-body__cb cb">
+      </div>
+      <div class="cell">
+        <p>{{product.id}}</p>
+      </div>
+      <div class="cell">
+        <input formControlName="name" class="edit__input" placeholder="Введите название">
+        <button class="save-btn" (click)="save()">Сохранить</button>
+      </div>
+      <div class="cell">
+        <input formControlName="manufacturerId" class="edit__input" placeholder="Введите номер производителя">
+      </div>
+      <div class="cell">
+        <input formControlName="categoryId" class="edit__input" placeholder="Введите номер категории">
+      </div>
+      <div class="cell">
+        <input formControlName="count" class="edit__input" placeholder="Введите количество">
+      </div>
+      <div class="cell">
+        <input formControlName="cost" class="edit__input" placeholder="Введите цену">
+      </div>
+      <div class="cell">
+        <button class="btn btn-danger delete" (click)="deleteProduct(product.id)">
+          <svg class="delete" icon="delete"></svg>
+        </button>
+      </div>
+      <div class="cell">
+        <button class="btn btn-extended" (click)="showDescription(product.id)"
+        >
+          <
+        </button>
+      </div>
+    </div>
+    @if (extendedInfoMap.get(product.id)!()) {
+      <div class="extended-info">
+        <div class="product-description">
+          <textarea formControlName="description">{{ product.description }}</textarea>
+        </div>
+        <div class="product-image">
+          <img class="product-img" [src]="product.imagePath">
+          <input formControlName="imagePath" class="product-img__path">
+        </div>
+      </div>
+    }
+  </form>
+}

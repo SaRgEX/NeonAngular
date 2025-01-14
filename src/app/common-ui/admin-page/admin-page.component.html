@@ -2,14 +2,7 @@
   <app-sidebar [hide]="hide()"></app-sidebar>
   <div class="mainArea">
     <app-navbar (hide)="hideSidebar($event)"></app-navbar>
-    <div class="mainContent">
-      <app-filter></app-filter>
-
-      <div class="products-table">
-        <h2>Товары</h2>
-        <app-product-table [products]="products"></app-product-table>
-      </div>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
 

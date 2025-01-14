@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  max-width: 1440px;
+  width: 100%;
+  place-self: center;
+}
+
+.category__wrapper {
+  background-color: var(--footer-bg-color);
+  color: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px;
+}

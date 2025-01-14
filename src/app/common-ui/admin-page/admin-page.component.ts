@@ -5,6 +5,7 @@ import {SidebarComponent} from '../admin/sidebar/sidebar.component';
 import {ProductTableComponent} from '../admin/product-table/product-table.component';
 import {ProductService} from '../../data/services/product.service';
 import {Product} from '../../data/interfaces/product.interface';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-admin-page',
@@ -12,7 +13,8 @@ import {Product} from '../../data/interfaces/product.interface';
     SidebarComponent,
     NavbarComponent,
     FilterComponent,
-    ProductTableComponent
+    ProductTableComponent,
+    RouterOutlet
   ],
   templateUrl: './admin-page.component.html',
   standalone: true,

@@ -1,24 +1,17 @@
+:host {
+}
+
 .container {
   display: flex;
   flex-direction: row;
   position: relative;
   height: 100%;
+  background: var(--background-color);
+
 }
+
 .mainArea {
   width: 100%;
   padding: 10px;
   position: relative;
-}
-
-.products-table {
-  display: flex;
-  flex-direction: column;
-  max-width: 1440px;
-  align-items: center;
-  place-self: center;
-  width: 100%;
-  background-color: var(--product-bg-color);
-  border-radius: 12px;
-  padding-top: 12px;
-  gap: 12px;
 }

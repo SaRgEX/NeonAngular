@@ -24,69 +24,87 @@
           <p>Цена</p>
         </div>
         <div class="cell">
-          <button class="btn btn-danger delete"><svg class="delete" icon="delete"></svg></button>
+          <button class="btn btn-danger delete">
+            <svg class="delete" icon="delete"></svg>
+          </button>
+        </div>
+        <div class="cell">
+          <button class="btn btn-edit edit" (click)="isEditing.set(!isEditing())">
+            <svg class="edit" icon="edit"></svg>
+          </button>
         </div>
       </div>
-      @for (product of products; track product.id) {
-        <div class="table-body">
-          <div class="minimal-info">
-            <div class="cell">
-              <input [checked]="checked()" type="checkbox" class="table-body__cb cb">
+      @if (!isEditing()) {
+        @for (product of products; track product.id) {
+          <div class="table-body">
+            <div class="minimal-info">
+              <div class="cell">
+                <input [checked]="checked()" type="checkbox" class="table-body__cb cb">
+              </div>
+              <div class="cell">
+                <p>{{ product.id }}</p>
+              </div>
+              <div class="cell">
+                <p>{{ product.name }}</p>
+              </div>
+              <div class="cell">
+                <p>{{ product.manufacturer }}</p>
+              </div>
+              <div class="cell">
+                <p>{{ product.category }}</p>
+              </div>
+              <div class="cell">
+                <p>{{ product.count }}</p>
+              </div>
+              <div class="cell">
+                <p>{{ product.cost }}</p>
+              </div>
+              <div class="cell">
+                <button class="btn btn-danger delete" (click)="deleteProduct(product.id)">
+                  <svg class="delete" icon="delete"></svg>
+                </button>
+              </div>
+              <div class="cell">
+                <button class="btn btn-extended" (click)="showDescription(product.id)"
+                >
+                  <
+                </button>
+              </div>
             </div>
-            <div class="cell">
-              <p>{{ product.id }}</p>
-            </div>
-            <div class="cell">
-              <p>{{ product.name }}</p>
-            </div>
-            <div class="cell">
-              <p>{{ product.manufacturer }}</p>
-            </div>
-            <div class="cell">
-              <p>{{ product.category }}</p>
-            </div>
-            <div class="cell">
-              <p>{{ product.count }}</p>
-            </div>
-            <div class="cell">
-              <p>{{ product.cost }}</p>
-            </div>
-            <div class="cell">
-              <button class="btn btn-danger delete"><svg class="delete" icon="delete"></svg></button>
-            </div>
-            <div class="cell">
-              <button class="btn btn-extended" (click)="showDescription(product.id)"
-              >
-                <
-              </button>
-            </div>
+            @if (extendedInfoMap.get(product.id)!()) {
+              <div class="extended-info">
+                <div class="product-description">
+                  <p>{{ product.description }}</p>
+                </div>
+                <div class="product-image">
+                  <img class="product-img" [src]="product.imagePath">
+                  <p class="product-img__path">{{ product.imagePath }}</p>
+                </div>
+              </div>
+            }
           </div>
-          @if(extendedInfoMap.get(product.id)!()) {
-            <div class="extended-info">
-              <div class="product-description">
-                <p>{{product.description}}</p>
-              </div>
-              <div class="product-image">
-                <img class="product-img" [src]="product.imagePath">
-                <p class="product-img__path">{{product.imagePath}}</p>
-              </div>
-            </div>
-          }
-        </div>
+        }
+      } @else {
+        @for(product of products; track product.id) {
+          <app-product-change [extendedInfoMap]="extendedInfoMap" [product]="product"></app-product-change>
+        }
       }
       <div class="add-product">
-        <button class="btn add" (click)="openCreation.set(!openCreation())" [style.display]="Close"><svg class="add" icon="add"></svg></button>
+        <button class="btn add" (click)="openCreation.set(!openCreation())" [style.display]="Close">
+          <svg class="add" icon="add"></svg>
+        </button>
         <form [formGroup]="form" class="product__creation" method="post" (ngSubmit)="onSubmit()" [style.display]="Open">
           <div class="form-container">
             <div class="main-info">
               <input formControlName="name" class="product__input" type="text" placeholder="Название">
-              <input formControlName="manufacturerId" class="product__input" type="number"  placeholder="Производитель">
+              <input formControlName="manufacturerId" class="product__input" type="number" placeholder="Производитель">
               <input formControlName="categoryId" class="product__input" type="number" placeholder="Категория">
               <input formControlName="cost" class="product__input" type="number" placeholder="Цена">
               <input formControlName="count" class="product__input" type="number" placeholder="Количество">
             </div>
             <div class="extended-info__product">
-              <textarea formControlName="description" class="product__input" type="number" placeholder="Описание"></textarea>
+              <textarea formControlName="description" class="product__input" type="number"
+                        placeholder="Описание"></textarea>
               <input formControlName="imagePath" class="product__input" type="text" placeholder="Путь до изображения">
             </div>
           </div>

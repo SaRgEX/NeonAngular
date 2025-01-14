@@ -1,0 +1,17 @@
+<form [formGroup]="form" class="table-body">
+  <div class="minimal-info">
+    <div class="cell">
+      <input [checked]="checked()" type="checkbox" class="table-body__cb cb">
+    </div>
+    <div class="cell">
+      <p>{{ manufacturer.id }}</p>
+    </div>
+    <div class="cell">
+      <input formControlName="name" class="edit__input" placeholder="Название">
+      <button class="save-btn" (click)="save()">Сохранить</button>
+    </div>
+    <div class="cell">
+    </div>
+    <div class="cell"></div>
+  </div>
+</form>

@@ -1,0 +1,55 @@
+:host {
+  position:relative;
+  width: 100%;
+  padding: 10px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  align-items: center;
+  place-self: center;
+  background-color: var(--product-bg-color);
+  border-radius: 12px;
+  padding: 12px;
+  gap: 12px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.form-control {
+  background: var(--light-color);
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  outline: none;
+  font-size: 16px;
+}
+
+.role-switcher {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: var(--light-color);
+  color: var(--dark-color);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: var(--btn-hover-color);
+}

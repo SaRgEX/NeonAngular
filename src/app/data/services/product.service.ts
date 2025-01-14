@@ -36,6 +36,23 @@ export class ProductService {
       catchError(this.handleError))
   }
 
+  deleteProduct(id: number) {
+    return this.http.delete(`${this.baseApiUrl}api/Product/${id}`)
+  }
+
+  updateProduct(id: number, payload: {
+    name: string,
+    manufacturerId: number,
+    categoryId: number,
+    cost: number,
+    count: number,
+    description: string,
+    imagePath: string | null
+  }) {
+    return this.http.patch(`${this.baseApiUrl}api/Product/${id}`, payload).pipe(
+      catchError(this.handleError))
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.status === 500) {
       console.error('An error occurred:', error.error);

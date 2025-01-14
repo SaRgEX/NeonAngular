@@ -1,9 +1,9 @@
 <div class="sideArea" [style.display]="Test">
   <ul class="sideMenu">
     <li><a [routerLink]="['/admin']">Меню</a></li>
-    <li><a>Производители</a></li>
-    <li><a>Категории</a></li>
-    <li><a>Пользователи</a></li>
+    <li><a [routerLink]="['/admin/manufacturer/']">Производители</a></li>
+    <li><a [routerLink]="['/admin/category/']">Категории</a></li>
+    <li><a [routerLink]="['/admin/users/']">Пользователи</a></li>
     <li><a [routerLink]="['/admin/forecast/']">Статистика</a></li>
   </ul>
 </div>

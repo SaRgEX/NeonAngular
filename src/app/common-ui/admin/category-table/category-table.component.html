@@ -1,0 +1,66 @@
+<div class="product-table">
+  <div class="table-header">
+    <div class="cell">
+      <input type="checkbox" class="cb" (click)="checked.set(!checked())">
+    </div>
+    <div class="cell">
+      <p>ID</p>
+    </div>
+    <div class="cell">
+      <p>Название</p>
+    </div>
+    <div class="cell">
+      <button class="btn btn-danger delete">
+        <svg class="delete" icon="delete"></svg>
+      </button>
+    </div>
+    <div class="cell">
+      <button class="btn btn-edit edit" (click)="isEditing.set(!isEditing())">
+        <svg class="edit" icon="edit"></svg>
+      </button>
+    </div>
+  </div>
+  @if (!isEditing()) {
+    @for (category of categories; track category.id) {
+      <div class="table-body">
+        <div class="minimal-info">
+          <div class="cell">
+            <input [checked]="checked()" type="checkbox" class="table-body__cb cb">
+          </div>
+          <div class="cell">
+            <p>{{ category.id }}</p>
+          </div>
+          <div class="cell">
+            <p>{{ category.title }}</p>
+          </div>
+          <div class="cell">
+            <button class="btn btn-danger delete" (click)="deleteCategory(category.id)">
+              <svg class="delete" icon="delete"></svg>
+            </button>
+          </div>
+          <div class="cell"></div>
+        </div>
+      </div>
+    }
+  } @else {
+    @for (category of categories; track category.id) {
+      <app-category-change [category]="category"></app-category-change>
+    }
+  }
+  <div class="add-product">
+    <button class="btn add" (click)="openCreation.set(!openCreation())" [style.display]="Close">
+      <svg class="add" icon="add"></svg>
+    </button>
+    <form [formGroup]="form" class="product__creation" method="post" (ngSubmit)="onSubmit()" [style.display]="Open">
+      <div class="form-container">
+        <div class="main-info">
+          <input formControlName="title" class="product__input" type="text" placeholder="Название">
+        </div>
+      </div>
+
+      <button class="btn-primary add-product__btn" type="submit">Добавить</button>
+
+      <button class="btn-primary cancel-btn" (click)="openCreation.set(!openCreation())">Отменить</button>
+    </form>
+  </div>
+</div>

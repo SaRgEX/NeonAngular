@@ -1,18 +1,3 @@
-:host {
-  display: block;
-  max-width: 1440px;
-  width: 100%;
-  place-self: center;
-}
-
-.product-table__wrapper {
-  background-color: var(--footer-bg-color);
-  color: var(--light-color);
-  width: 100%;
-  border-radius: 12px 12px 0 0;
-  padding: 12px;
-}
-
 .product__table {
   width: 100%;
   background: var(--light-color);
@@ -56,28 +41,6 @@
   grid-row: 0;
 }
 
-.add-product {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-.add {
-  background: none;
-  border: none;
-  color: var(--light-color);
-  width: 48px;
-  height: 48px;
-  place-content: center;
-  svg {
-    padding: 10px 0;
-  }
-}
-
-.add:hover {
-  color: var(--add-color);
-  transition: color 0.3s ease-in-out;
-}
 
 .cell2 {
   grid-row: 2;
@@ -120,58 +83,6 @@
   height: 15px;
 }
 
-.product__creation {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-left: 5.9rem;
-  width: 100%;
-}
-
-.form-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-.main-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.1fr 0.1fr;
-  grid-gap: 10px;
-}
-
-.product__input {
-  background: none;
-  border: 1px solid;
-  outline: none;
-  font-size: 16px;
-  padding: 4px;
-  color: var(--light-color)
-
-}
-
-.btn-primary {
-  background: none;
-  color: var(--light-color);
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s ease-in-out;
-}
-
-.add-product {
-  padding: 10px;
-}
-
-.add-product__btn:hover {
-  color: var(--add-color);
-}
-
-.extended-info__cb {
-  display: none;
-}
-
 .btn-extended {
   background: none;
   border: none;
@@ -209,12 +120,20 @@
   height: 100px;
 }
 
-.edit {
-  cursor: pointer;
-  width: 30px;
-  height: 24px;
+.edit__input {
   background: none;
+  border: none;
+  width: 100%;
+  padding: 4px;
   color: var(--light-color);
+  outline: none;
+}
+
+.save-btn {
+  background: var(--light-color);
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
 }
 
 @keyframes open__extended {

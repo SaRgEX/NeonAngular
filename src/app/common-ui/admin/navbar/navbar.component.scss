@@ -25,9 +25,14 @@
 }
 
 .menuIcon {
-  font-size: 1.5em;
-  padding: 0.4em;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  text-align: center;
+  place-content: center;
   cursor: pointer;
+  border-radius: 50%;
+  background-color: var(--light-color);
 }
 .account {
   position: relative;
@@ -60,6 +65,7 @@
   z-index: 999;
 }
 .accountLinks li {
+  list-style-type: none;
   border: none !important;
 }
 .accountLinks li a {

@@ -4,13 +4,15 @@ import {SvgIconComponent} from '../../svg-icon/svg-icon.component';
 import {ProductService} from '../../../data/services/product.service';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {NgStyle} from '@angular/common';
+import {ProductChangeComponent} from '../product-change/product-change.component';
 
 @Component({
   selector: 'app-product-table',
   imports: [
     SvgIconComponent,
     ReactiveFormsModule,
-    NgStyle
+    NgStyle,
+    ProductChangeComponent
   ],
   templateUrl: './product-table.component.html',
   standalone: true,
@@ -22,6 +24,7 @@ export class ProductTableComponent {
   checked = signal<boolean>(false)
   openCreation = signal<boolean>(false)
   extendedInfo = signal<boolean>(false)
+  isEditing = signal<boolean>(false)
   productService = inject(ProductService)
 
   form: FormGroup = new FormGroup({
@@ -57,6 +60,17 @@ export class ProductTableComponent {
           window.location.reload()
         })
     }
+  }
+
+  deleteProduct(productId: number) {
+    this.productService.deleteProduct(productId)
+     .subscribe(res => {
+        window.location.reload()
+      })
+  }
+
+  changeProduct() {
+
   }
 
   showDescription(productId: number) {

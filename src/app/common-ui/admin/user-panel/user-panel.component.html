@@ -1,0 +1,14 @@
+<div class="user">
+  <h1>Регистрация пользователя</h1>
+  <form [formGroup]="form" method="post" class="user-info" (ngSubmit)="createUser()">
+    <label>Логин</label>
+    <input formControlName="name" type="text" class="form-control">
+    <label>Пароль</label>
+    <input formControlName="password" type="password" class="form-control">
+    <div class="role-switcher">
+      <label>Администратор?</label>
+      <app-switch [checked]="role"></app-switch>
+    </div>
+    <button type="submit" class="btn btn-primary">Зарегестрировать</button>
+  </form>
+</div>
